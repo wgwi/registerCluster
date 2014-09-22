@@ -1,0 +1,33 @@
+{% extends "base_extend_bootstrap.html" %}
+{% block extrastyle %}
+<link rel="stylesheet" href="{{ STATIC_URL }}css/registerSite.css">
+{% endblock %}
+
+{% block body %}
+<body>
+   {% block header %}<div class="blog-masthead">
+    <div class="blog-masthead">
+        <div class="container">
+            <nav class="blog-nav">
+            <a class="blog-nav-item active" href="#">本站</a>
+            <a class="blog-nav-item" href="#">声明与责任</a>
+            <a class="blog-nav-item" href="#">通知公告</a>
+            <a class="blog-nav-item" href="#">FAQ</a>
+            <a class="blog-nav-item" href="#">注册</a>
+            </nav>
+        </div>
+    </div>
+
+   {% endblock %}
+
+    {% block content %}{% endblock %}
+
+    {% block footer %}
+    <div class="blog-footer">
+        <p>2014, 山西大学网络中心 ©</p>
+        <p>联系方式,电话:0351-7011544,email:wgwi@sxu.edu.cn</p>
+    </div>
+    {% endblock %}
+</body>
+{% endblock %}
+
