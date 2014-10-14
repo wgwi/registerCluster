@@ -1,21 +1,25 @@
 {% extends "base.html" %}
 
-{% block title %}
-    山西大学高性能平台注册
-{% endblock %}
 
 {% block stylesheet %}
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/flat-ui.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/site.css">
+    <script src="{{ STATIC_URL }}js/vendor/jquery.min.js"></script>
+    <script src="{{ STATIC_URL }}js/vendor/bootstrap.min.js"></script>
+    <script src="{{ STATIC_URL }}js/flat-ui.js"></script>
 {% endblock %}
 
 {% block body %}
+    <body>
+    <div class="wrapper">
+    {% block header %}{% endblock %}
+
+    {% block content %}
+    {% endblock %}
+    <div class="push"></div>
+    </div>
+    {% block footer %}{% endblock %}
+    </body>
 {% endblock %}

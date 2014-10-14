@@ -1,0 +1,15 @@
+{% extends "site_simple.html" %}
+
+
+    {% block content %}
+        <div class="container">
+        <div class="alert alert-warning" role="alert">
+        <p class="text-danger">注册前请参看<a href="{% url 'docs' %}">通知公告</a>的《山西大学高性能运营规章》</p>
+        </div>
+        <form action="" method="post">
+        {% load crispy_forms_tags %}
+        {% crispy form %}
+        </form>
+        </div>
+    {% endblock %}
+

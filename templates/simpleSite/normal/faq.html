@@ -1,0 +1,16 @@
+{% extends "site_simple.html" %}
+
+{% block content %}
+        <div class="container">
+        <div class="alert">
+            <p class="text-right text-warning"><a href="mail:wgwi@sxu.edu.cn"><span class="fui-mail"></span>Q?</a></p>
+        </div>
+        <ol>
+            {% for q in questions %}
+                <li>{{ q.qu }}</li>
+                <p>{{ q.an }}</p>
+            {% endfor %}
+        </ol>
+        </div>
+{% endblock %}
+

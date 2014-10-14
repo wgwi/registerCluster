@@ -1,33 +1,121 @@
-{% extends "base_extend_bootstrap.html" %}
-{% block extrastyle %}
-<link rel="stylesheet" href="{{ STATIC_URL }}css/registerSite.css">
-{% endblock %}
+{% extends "site_simple.html" %}
 
-{% block body %}
-<body>
-   {% block header %}<div class="blog-masthead">
-    <div class="blog-masthead">
-        <div class="container">
-            <nav class="blog-nav">
-            <a class="blog-nav-item active" href="#">本站</a>
-            <a class="blog-nav-item" href="#">声明与责任</a>
-            <a class="blog-nav-item" href="#">通知公告</a>
-            <a class="blog-nav-item" href="#">FAQ</a>
-            <a class="blog-nav-item" href="#">注册</a>
-            </nav>
+{% block content %}
+    <div class="jumbotron">
+      <div class="container">
+        <div class="row">
+           <div class="col-md-5">
+                <h2>平台简介</h2>
+                <p>2014.8启: 致力于山西大学高性能计算辅助科研与教学</p>
+                <p><a class="btn btn-primary btn-lg" role="button" id="showrules">详情</a></p>
+           </div>
+           <div class="col-md-7">
+                <div id="cluster-carousel-pictures" class="carousel slide" data-ride="carousel">
+              <!-- Indicators -->
+              <ol class="carousel-indicators">
+                <li data-target="#cluster-carousel-pictures" data-slide-to="0" class="active"></li>
+                <li data-target="#cluster-carousel-pictures" data-slide-to="1"></li>
+                <li data-target="#cluster-carousel-pictures" data-slide-to="2"></li>
+              </ol>
+
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner">
+                <div class="item active">
+                  <img src="{{ STATIC_URL }}img/img_5675.jpg" alt="1">
+                  <div class="carousel-caption">
+                    计算节点
+                  </div>
+                </div>
+                <div class="item">
+                  <img src="{{ STATIC_URL }}img/img_5703.jpg" alt="2">
+                  <div class="carousel-caption">
+                    机房
+                  </div>
+                </div>
+                <div class="item">
+                  <img src="{{ STATIC_URL }}img/arch_01.jpg" alt="3">
+                  <div class="carousel-caption">
+                    系统架构
+                  </div>
+                </div>
+              </div>
+
+              <!-- Controls -->
+              <a class="left carousel-control" href="#cluster-carousel-pictures" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+              </a>
+              <a class="right carousel-control" href="#cluster-carousel-pictures" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+              </a>
+            </div>
+
+           </div>
         </div>
+      </div>
     </div>
 
-   {% endblock %}
+    <div id="detail" class="container" hidden="1">
+    <em class="text-success">现代科学研究的方法主要有三种，理论论证、科学实验、科学计算。近年来，科学计算方法逐步成为科学研究的主流发展方法，在重要科学研究和工程应用领域，  如，金融工程、信息检索、基因研究、环境模拟、数值计算、数据分析、决策支持等领域得到广泛使用，为科学探索提供了新思路、新途径，在诸多方面取得了以前  预想不到的成果，有力地推动了科学研究的发展和工程技术的进步，基于网络环境的科研计算平台已经成为科学研究的必要的基础条件平台。</em>
+    <hr>
+    <p>
+    目前，我们对校内提供的高性能计算服务主要提供以下内容：
+    <ul>
+    <li>Linux HPC包括2个子部分
+        <ul>
+    <li>编译与测试平台，基于CentOS环境下的2个计算节点</li>
+    <li>Linux计算机器，基于CentOS环境下的45个计算节点</li>
+        </ul>
+    </li>
+    <li>虚拟计算平台，提供CentOS的KVM下的虚拟化计算，5个计算节点</li>
+    </ul>
+    </p>
+    <table class="table table-bordered table-striped">
+     <tr class="info">
+       <th width="112" height="25">集群名称</th>
+       <th width="83" height="25">机器描述</th>
+       <th width="83" height="25">核数</th>
+       <th width="68" height="25">操作系统</th>
+       <th width="320" height="25">安装软件</th>
+       <th width="109" height="25">运算能力</th>
+   </tr>
+   <tr>
+    <td>编译与测试linux节点</td>
+       <td>2台计算节点, 4个K20GPU</td>
+       <td>32</td>
+       <td>CentOS Linux</td>
+       <td>Gaussian, R, Python, Intel C/C++/Fortran, Matlab, PGI C++</td>
+       <td><strong>5TFLOPS</strong></td>
+   </tr>
+   <tr>
+    <td>linux集群</td>
+       <td>2台头节点，49台计算节点, 8个K20GPU</td>
+       <td>832</td>
+       <td>CentOS Linux</td>
+       <td>Gaussian, R, Python, Intel C/C++/Fortran, Matlab, PGI C++</td>
+       <td><strong>28TFLOPS</strong></td>
+   </tr>
+   <tr>
+    <td>远程虚拟计算</td>
+       <td>5台计算节点,</td>
+       <td>90</td>
+       <td>CentOS Linux</td>
+       <td>windows 7/2008/2000/,linux</td>
+       <td><strong>2TFLOPS</strong></td>
+   </tr>
+   </table>
+</div>
 
-    {% block content %}{% endblock %}
 
-    {% block footer %}
-    <div class="blog-footer">
-        <p>2014, 山西大学网络中心 ©</p>
-        <p>联系方式,电话:0351-7011544,email:wgwi@sxu.edu.cn</p>
-    </div>
-    {% endblock %}
-</body>
+
+   <script>
+   $('.carousel').carousel({
+        interval: 5000
+    });
+
+    $("#showrules").click(function(){$("#detail").show();});
+
+   </script>
+
 {% endblock %}
+
 

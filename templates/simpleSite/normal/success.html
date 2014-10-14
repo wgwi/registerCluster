@@ -1,0 +1,12 @@
+{% extends "site_simple.html" %}
+
+    {% block content %}
+        <div class="container">
+        <p class="text-success"> 您已注册成功, 我们将在三个工作日内给您回复。</p>
+        </div>
+        <script>
+
+        window.location.href={% url 'home' %}
+        </script>
+    {% endblock %}
+

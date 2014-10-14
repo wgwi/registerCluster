@@ -1,0 +1,60 @@
+{% extends "site_simple.html" %}
+
+    {% block content %}
+        <div class="container">
+        <ul>
+            <li class="text-info"><a href="http://172.24.3.31:8080">超算门户地址</a></li>
+            <li class="text-info">2014年9月培训文档</li>
+            <ul>
+                <li class="text-info"><a href="{{ STATIC_URL }}doc/a.ppt">高性能简单介绍</a></li>
+                <li class="text-info"><a href="{{ STATIC_URL }}doc/b.ppt">调度系统介绍</a></li>
+            </ul>
+            <li class="text-info">山西大学高性能运营规章<button id="showrules" type="button" class="btn btn-xs btn-info"><span class="btn-tip">察看</span></button></li>
+        </ul>
+            <div id="guizhang" hidden="1">
+              <h3 class="page-header">山西大学高性能计算平台运行制度(意见稿)</h3>
+              <h5>开户</h5>
+                <ol>
+                    <li>面向对象：隶属于山西大学的单位和个人。
+                        <ul>
+                            <li>以单位身份开户，需要有具体的负责人，单位用户允许限定的用户数同时提交任务；</li>
+                            <li>研究生用户：研究生的学生证和导师的批准材料。</li>
+                            <li>教师用户：需要教师的证件及项目简要信息。</li>
+                        </ul>
+                    </li>
+                    <li>按规定填写纸质的与电子的申请表。（账户信息名有统一标准，例如，工号，学生证号，身份证号，门户账号）申请表见附表。</li>
+                    <li>用户作业的优先级（可使用的资源数目和执行优先级）以申请人的项目以及申请人的技术职称来进行划定。项目重要性指当前要需要使用山大高性能解决的项目的种类、资助金额等。</li>
+                    <li>使用山西大学高性能平台完成的学校项目、相应论文后均应具有山西大学高性能计算平台的相关引证。</li>
+                </ol>
+              <h5>计费</h5>
+                <ol>
+                    <li>试运行期间象征性收费，但要和账户已使用的资源挂钩：采用的计算机群（瘦节点，胖节点，GPU节点），cpu核数，时长。</li>
+                    <li>试运行期间采用下月收费，不交费用者将停用帐户。</li>
+                </ol>
+              <h5>编译及运行</h5>
+                <ol>
+                    <li>普通权限用户仅适用web进行提交。</li>
+                    <li>高权限用户可以使用ssh登录。</li>
+                    <li>编译节点，高权限用户可以进行编译，但需要在编译节点指定节点进行。</li>
+                </ol>
+              <h5>账户优先级调整</h5>
+                <ol>
+                    <li>根据账户项目完成情况和发表论文的情况，对账户优先级进行提高。</li>
+                    <li>对于长期活跃的账号，对帐户优先级进行提高。</li>
+                    <li>对于长时间未用或没有相应完成项目和论文的账户，对账户优先级进行降低。</li>
+                    <li>对于在高性能平台上发现的恶意侵占资源，进行蓄意攻击的账号，进行封号处理，并予以通报。</li>
+                    <li>运行初期采用下月结算方式，对于未缴纳费用的用户，进行封号处理。</li>
+                </ol>
+              <h5>环境维护</h5>
+                <ol>
+                    <li>目前已有的运行环境为：操作系统为centos 6.5 , python, matlab, R, 高斯, vasp， intel C/C++/Fortran, PGI C++</li>
+                    <li>如果上述环境不符合项目运行要求，需联系管理人员进行解决。</li>
+                </ol>
+            </div>
+
+        </div>
+        <script>
+        $("#showrules").click(function(){$("#guizhang").show();});
+        </script>
+    {% endblock %}
+

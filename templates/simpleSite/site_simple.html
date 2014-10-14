@@ -1,0 +1,45 @@
+{% extends "base_extend_bootstrap.html" %}
+
+{% block title %}
+    山西大学高性能平台注册
+{% endblock %}
+
+{% block header %}
+    <div class="container">
+        <div class="blog-header">
+        <nav class="navbar navbar-inverse" role="navigation">
+             <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
+                <span class="sr-only">Toggle navigation</span>
+                </button>
+                <a class="navbar-brand" href="{% url 'home' %}">山大超算</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse-01">
+                <ul class="nav navbar-nav navbar-right">
+                  <li><a href="http://172.24.3.31:8080">门户入口</a></li>
+                  <li><a href="{% url 'docs' %}">通知公告</a></li>
+                  <li><a href="{% url 'faq' %}">FAQ</a></li>
+                  <li><a href="{% url 'employee' %}">注册<span class="navbar-new">!</span></a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+{% block footer %}
+ <footer class="footer">
+     <div class="panel-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 col-md-offset-3">
+                <h3 class="footer-title">山西大学网络中心 ©, 2014.10</h3>
+                <p>联系方式,电话:0351-7011544,email:wgwi@sxu.edu.cn</p>
+            </div>
+        </div>
+    </div>
+    </div>
+</footer>
+{% endblock %}
